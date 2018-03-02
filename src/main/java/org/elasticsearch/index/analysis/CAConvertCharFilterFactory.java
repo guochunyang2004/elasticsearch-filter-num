@@ -19,23 +19,23 @@
 
 package org.elasticsearch.index.analysis;
 
+import java.io.Reader;
+
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.env.Environment;
 import org.elasticsearch.index.IndexSettings;
 
-import java.io.Reader;
+public class CAConvertCharFilterFactory extends AbstractCharFilterFactory {
 
-public class STConvertCharFilterFactory extends AbstractCharFilterFactory {
+    CAConvertType convertType = CAConvertType.CHINESE_TO_ARAB;
 
-    STConvertType convertType = STConvertType.SIMPLE_2_TRADITIONAL;
-
-    public STConvertCharFilterFactory(IndexSettings indexSettings, Environment env, String name, Settings settings) {
+    public CAConvertCharFilterFactory(IndexSettings indexSettings, Environment env, String name, Settings settings) {
         super(indexSettings, name);
 
-        String type = settings.get("convert_type", "s2t");
+        String type = settings.get("convert_type", "c2a");
 
-        if (type.equals("t2s")) {
-            convertType = STConvertType.TRADITIONAL_2_SIMPLE;
+        if (type.equals("c2a")) {
+            convertType = CAConvertType.CHINESE_TO_ARAB;
         }
     }
 
@@ -43,6 +43,6 @@ public class STConvertCharFilterFactory extends AbstractCharFilterFactory {
     @Override
     public Reader create(Reader tokenStream) {
 
-        return new STConvertCharFilter(tokenStream, convertType);
+        return new CAConvertCharFilter(tokenStream, convertType);
     }
 }
