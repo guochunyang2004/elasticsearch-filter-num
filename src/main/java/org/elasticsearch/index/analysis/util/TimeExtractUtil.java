@@ -1,7 +1,6 @@
 package org.elasticsearch.index.analysis.util;
 
-import com.google.common.collect.ImmutableList;
-
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -223,25 +222,25 @@ public class TimeExtractUtil {
 	/**
 	 * 方法numberTranslator的辅助方法，可将[零-九]正确翻译为[0-9]
 	 */
-	private final static List<String> ZERO = ImmutableList.of("零", "0");
+	private final static List<String> ZERO = Arrays.asList("零", "0");
 
-	private final static List<String> ONE = ImmutableList.of("一", "1");
+	private final static List<String> ONE = Arrays.asList("一", "1");
 
-	private final static List<String> TWO = ImmutableList.of("二", "两", "2");
+	private final static List<String> TWO = Arrays.asList("二", "两", "2");
 
-	private final static List<String> THREE = ImmutableList.of("三", "3");
+	private final static List<String> THREE = Arrays.asList("三", "3");
 
-	private final static List<String> FOUR = ImmutableList.of("四", "4");
+	private final static List<String> FOUR = Arrays.asList("四", "4");
 
-	private final static List<String> FIVE = ImmutableList.of("五", "5");
+	private final static List<String> FIVE = Arrays.asList("五", "5");
 
-	private final static List<String> SIX = ImmutableList.of("六", "6");
+	private final static List<String> SIX = Arrays.asList("六", "6");
 
-	private final static List<String> SEVEN = ImmutableList.of("七", "7");
+	private final static List<String> SEVEN = Arrays.asList("七", "7");
 
-	private final static List<String> EIGHT = ImmutableList.of("八", "8");
+	private final static List<String> EIGHT = Arrays.asList("八", "8");
 
-	private final static List<String> NINE = ImmutableList.of("九", "9");
+	private final static List<String> NINE = Arrays.asList("九", "9");
 
 	private static int wordToNumber(String s) {
 		if (ZERO.contains(s)) {

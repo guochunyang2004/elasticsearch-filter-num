@@ -1,4 +1,4 @@
-package org.elasticsearch.plugin.analysis.stconvert;
+package org.elasticsearch.plugin.analysis.caconvert;
 
 import org.elasticsearch.index.analysis.*;
 import org.elasticsearch.indices.analysis.AnalysisModule;
