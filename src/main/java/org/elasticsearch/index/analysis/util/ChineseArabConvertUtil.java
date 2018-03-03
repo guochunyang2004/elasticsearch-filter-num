@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  * @date: 2017/12/20
  * @since JDK 1.8
  */
-public class TimeExtractUtil {
+public class ChineseArabConvertUtil {
 
 	/**
 	 * 该方法可以将字符串中所有的用汉字表示的数字转化为用阿拉伯数字表示的数字 如"这里有一千两百个人，六百零五个来自中国"可以转化为

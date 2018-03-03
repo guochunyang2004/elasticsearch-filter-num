@@ -1,6 +1,6 @@
 package org.elasticsearch.index.analysis;
 
-import org.elasticsearch.index.analysis.util.TimeExtractUtil;
+import org.elasticsearch.index.analysis.util.ChineseArabConvertUtil;
 
 import java.io.*;
 import java.util.*;
@@ -96,7 +96,7 @@ public class CAConverter {
 	}
 
 	public String convert(CAConvertType type, String in) {
-		return TimeExtractUtil.numberTranslator(in);
+		return ChineseArabConvertUtil.numberTranslator(in);
 	}
 
 	public static CAConverter getInstance() {
